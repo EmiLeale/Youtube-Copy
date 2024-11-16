@@ -378,10 +378,22 @@ sidebar {
     position: absolute;
     top: 0;
     display: none;
-    overflow-y: scroll;
-    container-name: sidebar-hidden;
+    overflow-y: auto;
+    scroll-margin-top: 500px;
 }
-
+.sidebar__container-hidden:hover {
+  scroll-padding-top: 0; /* Elimina espacio vacío al pasar el puntero */
+}
+.sidebar__container-hidden::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: var(--sidebar-lineas-hidden);
+}
+.sidebar__container-hidden::-webkit-scrollbar-thumb {
+    background-color: var(--sidebar-lineas-hidden);
+}
+.sidebar__container-hidden::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+}
 
 body:has(input[type="checkbox"]:checked) .sidebar__container-hidden {
     display: block;
@@ -475,7 +487,7 @@ body:has(input[type="checkbox"]:checked) .sidebar__container-hidden {
 }
 
 .info-sidebar-hidden {
-    height: 13rem;
+    height: 18rem;
     width: 100%;
     border: none;
     padding: 0.6rem 0;
